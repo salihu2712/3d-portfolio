@@ -1,0 +1,73 @@
+{
+  "hero": {
+    "headline1": "Motion design",
+    "headline2": "& 3D Animation ",
+    "subtitle": "CREATIVE STUDIO",
+    "bio": "I'm a passionate creative driven by a deep love for animation and technology.",
+    "bioDetail": "I craft visual magic through 3D rendering and animation, bringing products to life with stunning detail and realism. My work helps brands stand out in today's crowded digital landscape.",
+    "ctaText": "Get In Touch"
+  },
+  "services": [
+    {
+      "id": "still-renders",
+      "title": "3D Still Renders",
+      "description": "Photorealistic product visualizations",
+      "image": "/images/products/sunglasses.webp"
+    },
+    {
+      "id": "animation",
+      "title": "Product Animation",
+      "description": "Dynamic 3D animations and motion graphics",
+      "image": "/images/products/headphones-render.jpeg"
+    },
+    {
+      "id": "social",
+      "title": "Social Media Content",
+      "description": "Engaging visuals for digital platforms",
+      "image": "/images/products/face-serum-nature.webp"
+    },
+    {
+      "id": "modeling",
+      "title": "3D Product Modeling",
+      "description": "Detailed 3D models for any application",
+      "image": "/images/products/diamond-ring.png"
+    }
+  ],
+  "featuredVideos": [
+    {
+      "id": "v1",
+      "type": "youtube",
+      "videoId": "RJScvkUMt-8",
+      "title": "3D Product Animation Showreel",
+      "description": "A collection of our best 3D product animations and visualizations"
+    },
+    {
+      "id": "v2",
+      "type": "youtube",
+      "videoId": "QZUP9k45EXk",
+      "title": "3D Animation Demo",
+      "description": "Showcase of advanced 3D modeling and animation techniques"
+    },
+    {
+      "id": "v3",
+      "type": "youtube",
+      "videoId": "KBtI8m3zzKw",
+      "title": "3D Product Visualization Techniques",
+      "description": "Advanced lighting and rendering techniques for photorealistic product visualization"
+    }
+  ],
+  "contact": {
+    "email": "salihusaeed2712@gmail.com",
+    "phone": "+234 8020757319",
+    "location": "Abuja, Nigeria"
+  },
+  "model": {
+    "path": "/models/camera.glb",
+    "positionX": 0,
+    "positionY": -0.2,
+    "positionZ": 0,
+    "scale": 2,
+    "cameraZ": 8,
+    "cameraFov": 50
+  }
+}

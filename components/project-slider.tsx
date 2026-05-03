@@ -48,7 +48,7 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
       >
         {projects.map((project, index) => (
           <div key={index} className="px-2 md:px-3" style={{ width: `${isMobile ? 100 : 100 / 3}%` }}>
-            <div className="bg-gray-800 rounded-lg overflow-hidden group">
+            <div className="glass-card rounded-lg overflow-hidden group hover:border-white/25 hover:shadow-2xl transition-all duration-300">
               <div className="relative h-48 overflow-hidden">
                 <Image
                   src={project.imageUrl || "/placeholder.svg"}
@@ -57,7 +57,7 @@ export function ProjectSlider({ projects }: ProjectSliderProps) {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 border-t border-white/10">
                 <h3 className="font-medium">{project.title}</h3>
                 <p className="text-sm text-gray-400">{project.description}</p>
               </div>

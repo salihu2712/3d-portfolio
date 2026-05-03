@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "react-three-fiber": {
+      "source": "freshtechbro/claudedesignskills",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/react-three-fiber/SKILL.md",
+      "computedHash": "d672dfba48620140185d451bc9b6841833eed4306277776efab2e2a82c7b8fbf"
+    },
+    "tailwind-css": {
+      "source": "paulrberg/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tailwind-css/SKILL.md",
+      "computedHash": "35a415a9ec0d8347bc3724921ea94ac21a3e9c50ccd3e4324452a1fcb8410136"
+    },
+    "threejs-animation": {
+      "source": "cloudai-x/threejs-skills",
+      "sourceType": "github",
+      "skillPath": "skills/threejs-animation/SKILL.md",
+      "computedHash": "8c50b1493812bd88f3ed0637c0c3c5d846afdb322157b67b2ffba4ce8e552835"
+    }
+  }
+}

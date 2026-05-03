@@ -53,7 +53,7 @@ export function ContactForm() {
   }
 
   return (
-    <form className="space-y-4 md:space-y-6 bg-gray-900 p-4 md:p-6 rounded-lg">
+    <form className="space-y-4 md:space-y-6 glass-card p-4 md:p-6 rounded-lg">
       <div className="space-y-1 md:space-y-2">
         <Label htmlFor="name" className="text-sm md:text-base">
           Your name
@@ -65,7 +65,7 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10"
+          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10 input-glow"
         />
       </div>
 
@@ -81,7 +81,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10"
+          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10 input-glow"
         />
       </div>
 
@@ -96,7 +96,7 @@ export function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10"
+          className="bg-gray-800 border-gray-700 text-sm md:text-base h-9 md:h-10 input-glow"
         />
       </div>
 
@@ -111,13 +111,13 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          className="bg-gray-800 border-gray-700 min-h-[100px] md:min-h-[120px] text-sm md:text-base"
+          className="bg-gray-800 border-gray-700 min-h-[100px] md:min-h-[120px] text-sm md:text-base input-glow"
         />
       </div>
 
       {feedback && (
         <div
-          className={`p-3 rounded-md flex items-start gap-2 ${
+          className={`feedback-enter p-3 rounded-md flex items-start gap-2 ${
             feedback.success ? "bg-green-950/50 text-green-400" : "bg-red-950/50 text-red-400"
           }`}
         >

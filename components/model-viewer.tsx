@@ -1,45 +1,59 @@
 "use client"
 
 import { useRef, Suspense } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
-import { OrbitControls, Environment, useGLTF } from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { Environment, OrbitControls, useGLTF } from "@react-three/drei"
 import type { Group } from "three"
 
-function Model() {
-  const modelRef = useRef<Group>(null)
+interface ModelProps {
+  path: string
+  position: [number, number, number]
+  scale: number
+}
 
-  // Slow rotation when not interacting
-  useFrame((state) => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += 0.005
-    }
-  })
+function Model({ path, position, scale }: ModelProps) {
+  const modelRef = useRef<Group>(null)
+  const { scene } = useGLTF(path)
 
   return (
-    <group ref={modelRef} position={[0, -1, 0]} scale={2}>
-      <Suspense fallback={null}>
-        <primitive object={useGLTF("/models/camera.glb").scene} />
-      </Suspense>
+    <group ref={modelRef} position={position} scale={scale}>
+      <primitive object={scene} />
     </group>
   )
 }
 
-export function ModelViewer() {
+interface ModelViewerProps {
+  modelPath?: string
+  position?: [number, number, number]
+  scale?: number
+  cameraZ?: number
+  cameraFov?: number
+}
+
+export function ModelViewer({
+  modelPath = "/models/camera.glb",
+  position = [0, -1, 0],
+  scale = 2,
+  cameraZ = 8,
+  cameraFov = 45,
+}: ModelViewerProps) {
   return (
     <div className="w-full h-full">
-      <Canvas shadows camera={{ position: [0, 0, 8], fov: 45 }}>
+      <Canvas shadows camera={{ position: [0, 0, cameraZ], fov: cameraFov }}>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-        <Model />
-        <OrbitControls
-          enableZoom={true}
-          enablePan={false}
-          minPolarAngle={Math.PI / 6}
-          maxPolarAngle={Math.PI / 1.5}
-          autoRotate={false}
-          autoRotateSpeed={1}
-        />
+        <Suspense fallback={null}>
+          <Model key={modelPath} path={modelPath} position={position} scale={scale} />
+        </Suspense>
         <Environment preset="studio" />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={true}
+          autoRotate
+          autoRotateSpeed={0.5}
+          minPolarAngle={0.1}
+          maxPolarAngle={Math.PI - 0.1}
+        />
       </Canvas>
     </div>
   )
